@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is my first html code!</h1>
+    <h5> -by Maitreyi Mamgain.</h5>
+    <P>hello world!!</P>
+    <i>HOW TO LEARN HTML:</i>
+    <P>HTML stands for HyperText Markup Language. It is the language used to display documents and various creations in a standard browser.
+        It’s used by businesses worldwide to power mobile apps, software, and websites — almost 92.8% of all websites.
+        Learning HTML will open up countless opportunities for you and your business. You’ll be able to code websites and adjust scripts by understanding basic HTML.</P>
+    <br>
+    <p>As you learn and understand the required structure of HTML, you’ll be able to recall HTML shortcuts in no time.</p>
+    <u>To put it simply: HTML is the foundation for most of the sites you interact with every day. Even this very webpage is an HTML document.
+
+        It is so prevalent across the web that it makes sense for you to know, at least, the very basics of the HTML structure. You never know when it may come in handy.
+        
+        Knowing it will help you become an even more savvy business person, marketer, product developer, and designer.</u>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qz0aGYrrlhU?si=AmrL16VoTB4lN_lc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>
