@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole</title>
+    <link rel="stylesheet" href="mole.css";
+    <script src="mole.js"></script>
+</head>
+
+<body>
+    <h1>Whack A Mole</h1>
+    <h2 id="score">0</h2>
+    <!--3x3 -->
+    <div id="board"></div>
+</body>
+</html>
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: url(mario.jpg);
+    background-size: cover;
+}
+
+#board {
+    width: 540px;
+    height: 540px;
+    background-color: green;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    background: url(soil.png);
+    background-size: cover;
+    border: 3px solid white;
+    border-radius:25px;
+}
+
+#board div{
+    width: 180px;
+    height: 180px;
+    background-image:url(pipe.png) ;
+    background-size: cover;
+}
+
+#board div img{
+    width: 100px;
+    height: 100px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+
+
+let currMoletile;
+let currPlanttile;
+let score =0;
+let gameOver = false;
+
+window.onload = function(){
+    setGame();
+}
+
+function setGame(){
+    for(let i = 0; i < 9 ;i++){
+        
+        let tile = document.createElement("div");
+        tile.id=i.toString();
+        tile.addEventListener("click",selectTile);
+        document.getElementById("board").appendChild(tile);
+
+    }
+
+    setInterval(setMole,1000);
+    setInterval(setPlant,2000);
+}
+
+function getRandomTile(){
+    let num=Math.floor(Math.random()*9);
+    return num.toString();
+
+}
+
+function setMole(){
+    if(gameOver);{
+        return;
+    }
+
+    if(currMoletile);{
+        currMoletile.innerHTML ="";
+    }
+
+    let mole = document.createElement("img");
+    mole.src="./monty-mole.png";
+
+    let num = getRandomTile();
+    if(currPlanttile && currPlanttile.id == num);{
+        return;
+    }
+    currMoletile= document.getElementById(num);
+    currMoletile.appendChild(mole);
+
+}
+
+function setPlant(){
+    if(gameOver);{
+        return;
+    }
+     
+    if(currPlanttile);{
+        currPlanttile.innerHTML="";
+    }
+    
+    let plant = document.createElement("img");
+    plant.src="./pirannha-plant.png";
+
+    let num = getRandomTile();
+    if(currMoletile && currMoletile.id == num){
+        return;
+    }
+    currPlanttile = document.getElementById(num);
+    currPlanttile.appendChild(plant);
+}
+
+function selectTile(){
+    if(gameOver);{
+        return;
+    }
+
+    if (this == currMoletile);{
+        score += 10;
+        document.getElementById(score).innerText = score.toString();
+
+
+    }
+    elseif (this == currPlanttile);{
+        document.getElementById("score").innerText = "GAME OVER :" + score.toString();
+        gameOver = true ;
+    }
+    
+    
+}
